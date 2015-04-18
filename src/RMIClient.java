@@ -5,8 +5,11 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.io.*;
+import java.rmi.server.ServerNotActiveException;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import static java.rmi.server.RemoteServer.getClientHost;
 
 public class RMIClient {
     static String ServerName = "CentralIndex";
@@ -43,10 +46,21 @@ public class RMIClient {
                 File name = subDirectory[c];
                 try{
                     file.insertToRegistry(peerID, name.getName());
-                }catch (RemoteException e){
+                }catch (RemoteException e) {
                     System.err.println("Registry error");
                     e.printStackTrace();
                 }
+                /*try{
+                    try {
+                        file.getPeerIP(peerID, getClientHost());
+                        System.out.print(getClientHost());
+                    } catch (ServerNotActiveException e) {
+                        e.printStackTrace();
+                    }
+                }catch (RemoteException e) {
+                    System.err.println("Registry error");
+                    e.printStackTrace();
+                }*/
             }
         }
     }
@@ -55,6 +69,7 @@ public class RMIClient {
         RMIClient client = new RMIClient();
         Scanner in = new Scanner(System.in);
         int peerAsServerID = 0;
+        String peerAsServerIP = null;
         System.out.println("To search a file just\n"
                 + " type the name below: \n -->");
         String filename = in.nextLine();
@@ -68,7 +83,8 @@ public class RMIClient {
             SharedInterface handler = (SharedInterface) reg.lookup(ServerName); //reg.lookup
             client.directoryCheck(handler);
             peerAsServerID = handler.peerSearch(filename);
-            System.out.println(peerAsServerID);
+            peerAsServerIP = handler.peerIpSearch(peerAsServerID);
+            System.out.println("peer ip:" + peerAsServerIP);
             if (peerAsServerID == 1000){
                 System.out.println("No such file.");
             }else {

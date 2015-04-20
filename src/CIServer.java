@@ -26,13 +26,7 @@ public class CIServer implements SharedInterface{
     public int peerSearch(String filename){
 
         if(rmiregistry.containsKey(filename)){
-            try {
-                peer.put(rmiregistry.get(filename),getClientHost());
-            } catch (ServerNotActiveException e) {
-                e.printStackTrace();
-            }
             return rmiregistry.get(filename);
-
         }
         System.out.println("The file does not exist.");
         return 1000;
@@ -53,14 +47,23 @@ public class CIServer implements SharedInterface{
     }
 
     @Override
-    public boolean getPeerIP(int peerID, String peerIP) throws RemoteException {
-        peer.put(peerID, peerIP);
+    public boolean insertPeerIP(int peerID) throws RemoteException, ServerNotActiveException {
+        peer.put(peerID, getClientHost());
         return peer.isEmpty();
     }
 
     public static void main(String[] args){
+
+        String serverIp = null ;
+        if(args.length != 1) {
+            System.out.println("Usage: java FileProvider ServerIp ");
+            System.exit(0);
+        }
+
+        serverIp = args[0];
+
         System.setProperty("java.security.policy", "server.policy");
-        //System.setProperty("java.rmi.server.codebase", "file:/build/classes");
+        System.setProperty("java.rmi.server.hostname",serverIp );
 
         if (System.getSecurityManager() == null){
             System.setSecurityManager(new SecurityManager());

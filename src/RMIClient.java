@@ -12,11 +12,13 @@ import java.util.Scanner;
 import static java.rmi.server.RemoteServer.getClientHost;
 
 public class RMIClient {
+
+
     static String ServerName = "CentralIndex";
     static int peerID = 1;
     static File fileDirectory = new File("Client_files");
     static String downloadDirectory = "temp";
-
+    private static String filename;
     boolean download(byte[] file, String filename){
         BufferedOutputStream out;
         try{
@@ -66,14 +68,20 @@ public class RMIClient {
     }
 
     public static void main(String[] args){
+
+        /*if(args.length != 1) {
+
+            System.out.println("Usage: java RMIClient host");
+
+            System.exit(0);
+        }*/
         RMIClient client = new RMIClient();
         Scanner in = new Scanner(System.in);
         int peerAsServerID = 0;
         String peerAsServerIP = null;
-        System.out.println("To search a file just\n"
-                + " type the name below: \n -->");
-        String filename = in.nextLine();
+
         System.setProperty("java.security.policy", "server.policy");
+       /* System.setProperty("java.rmi.server.hostname", args[0]);*/
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }
@@ -82,6 +90,9 @@ public class RMIClient {
             Registry reg = LocateRegistry.getRegistry();
             SharedInterface handler = (SharedInterface) reg.lookup(ServerName); //reg.lookup
             client.directoryCheck(handler);
+            System.out.println("To search a file just\n"
+                    + " type the name below: \n -->");
+            filename = in.nextLine();
             peerAsServerID = handler.peerSearch(filename);
             peerAsServerIP = handler.peerIpSearch(peerAsServerID);
             System.out.println("peer ip:" + peerAsServerIP);
@@ -101,11 +112,11 @@ public class RMIClient {
                 System.out.println("File:"+filename+" not found.");
             } else{
 
-                String clientAsServerName = String.valueOf(peerAsServerID);
+                //String clientAsServerName = String.valueOf(peerAsServerID);
 
                 Registry reg = LocateRegistry.getRegistry();
 
-                Handler stub = (Handler)reg.lookup(clientAsServerName);
+                Handler stub = (Handler) reg.lookup(peerAsServerIP);
 
                 byte[] file = stub.obtain(filename);
                 

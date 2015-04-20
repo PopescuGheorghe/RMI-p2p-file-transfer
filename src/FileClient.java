@@ -6,9 +6,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Scanner;
 
-/**
- * Created by gimmy on 4/20/15.
- */
 public class FileClient {
 
     private static String downloadDirectory = "temp";

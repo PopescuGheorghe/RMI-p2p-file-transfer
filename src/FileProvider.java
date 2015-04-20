@@ -10,9 +10,9 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class FileProvider implements ProviderInterface {
 
-    static File fileDirectory = new File("Client_files");
+    private static File fileDirectory = new File("Client_files");
     private static String filename;
-    static String ServerName = "CentralIndex";
+    private static String ServerName = "CentralIndex";
     private static int peerID ;
 
     public byte[] download(String filename){
@@ -88,7 +88,7 @@ public class FileProvider implements ProviderInterface {
                 System.out.println("Peer "+ IP +" service bound " + peerID );
 
             }catch (Exception e){
-                System.err.println("CentralIndex exception: ");
+                System.err.println("FileProvider exception: ");
                 e.printStackTrace();
             }
 

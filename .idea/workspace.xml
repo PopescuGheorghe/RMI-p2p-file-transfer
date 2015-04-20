@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a061beb-5239-4750-bb11-3a2a80c11aa1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FileClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/RMIClient.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CIServer.java" afterPath="$PROJECT_DIR$/src/CIServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileClient.java" afterPath="$PROJECT_DIR$/src/FileClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileProvider.java" afterPath="$PROJECT_DIR$/src/FileProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SharedInterface.java" afterPath="$PROJECT_DIR$/src/SharedInterface.java" />
     </list>
     <ignored path="Proiect2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/SharedInterface.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,8 +61,8 @@
       <file leaf-file-name="FileProvider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FileProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7647059">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FileClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.452174">
+            <state vertical-scroll-proportion="0.0">
               <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CIServer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CIServer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CIServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.62608695">
+              <caret line="60" column="59" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,11 +130,11 @@
         <option value="$PROJECT_DIR$/src/CIClient.java" />
         <option value="$PROJECT_DIR$/src/Handler.java" />
         <option value="$PROJECT_DIR$/src/RMIClient.java" />
-        <option value="$PROJECT_DIR$/src/SharedInterface.java" />
-        <option value="$PROJECT_DIR$/src/CIServer.java" />
         <option value="$PROJECT_DIR$/src/ProviderInterface.java" />
-        <option value="$PROJECT_DIR$/src/FileProvider.java" />
         <option value="$PROJECT_DIR$/src/FileClient.java" />
+        <option value="$PROJECT_DIR$/src/SharedInterface.java" />
+        <option value="$PROJECT_DIR$/src/FileProvider.java" />
+        <option value="$PROJECT_DIR$/src/CIServer.java" />
       </list>
     </option>
   </component>
@@ -596,7 +596,7 @@
       <workItem from="1429349546125" duration="5353000" />
       <workItem from="1429355138702" duration="45000" />
       <workItem from="1429356080108" duration="11403000" />
-      <workItem from="1429514851394" duration="18630000" />
+      <workItem from="1429514851394" duration="19580000" />
     </task>
     <task id="LOCAL-00001" summary="almost working..backup version">
       <created>1429529734289</created>
@@ -614,7 +614,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39502000" />
+    <option name="totallyTimeSpent" value="40452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -821,16 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SharedInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -841,10 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CIServer.java">
+    <entry file="file://$PROJECT_DIR$/src/SharedInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -859,20 +849,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/FileClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7647059">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileClient.java">
+    <entry file="file://$PROJECT_DIR$/src/FileProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.452174">
-          <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CIServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62608695">
+          <caret line="60" column="59" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

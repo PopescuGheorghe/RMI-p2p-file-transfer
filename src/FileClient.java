@@ -94,7 +94,6 @@ public class FileClient {
                System.err.println("FileClient exception");
            }
 
-
         }catch (Exception e){
             System.err.println("Handler exception");
             e.printStackTrace();

@@ -56,13 +56,12 @@ public class FileProvider implements ProviderInterface {
     public static void main(String[] args) {
 
         String serverIp = null ;
-        if(args.length != 2) {
-            System.out.println("Usage: java FileProvider FileProviderID ServerIp ");
+        if(args.length != 1) {
+            System.out.println("Usage: java FileProvider ServerIp ");
             System.exit(0);
         }
 
-        serverIp = args[1];
-        peerID = Integer.parseInt(args[0]);
+        serverIp = args[0];
 
         FileProvider provider = new FileProvider();
         System.setProperty("java.security.policy", "server.policy");
@@ -72,6 +71,7 @@ public class FileProvider implements ProviderInterface {
         try {
             Registry reg = LocateRegistry.getRegistry(serverIp);
             SharedInterface handler = (SharedInterface) reg.lookup(ServerName); //reg.lookup
+            peerID = handler.login();
             provider.directoryCheck(handler);
 
 
@@ -97,4 +97,5 @@ public class FileProvider implements ProviderInterface {
             e.printStackTrace();
         }
     }
+
 }

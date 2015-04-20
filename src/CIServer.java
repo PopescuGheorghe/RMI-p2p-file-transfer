@@ -16,6 +16,8 @@ public class CIServer implements SharedInterface{
     Hashtable<String,Integer> rmiregistry;
     Hashtable<Integer,String> peer;
 
+    static int loginID = 0;
+
     public CIServer(){
         super();
         this.rmiregistry = new Hashtable<String,Integer>();
@@ -50,6 +52,14 @@ public class CIServer implements SharedInterface{
     public boolean insertPeerIP(int peerID) throws RemoteException, ServerNotActiveException {
         peer.put(peerID, getClientHost());
         return peer.isEmpty();
+    }
+
+    @Override
+    public int login() throws RemoteException {
+
+        loginID++;
+        System.out.println("Logged in succesfully with ID: " + loginID);
+        return loginID;
     }
 
     public static void main(String[] args){
